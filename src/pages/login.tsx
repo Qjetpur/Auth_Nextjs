@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
 import Email from "next-auth/providers/email";
+import api from '../api';
 
 export default function Login() {
   const params = useSearchParams();
@@ -19,8 +20,8 @@ export default function Login() {
     console.log("This auth State is", authState);
 
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/auth/login",
+      const res = await api.post(
+        "/api/auth/login",
         authState
       );
       setLoading(false);

@@ -5,11 +5,13 @@ import ErrorReporter from "@/validator/ErrorReporter";
 import bcrypt from "bcrypt";
 import { User } from "@/model/User";
 import { NextApiRequest, NextApiResponse } from "next";
+import cors from "@/lib/middleware";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  await cors(req, res);
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
