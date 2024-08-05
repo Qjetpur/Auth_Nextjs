@@ -23,7 +23,7 @@ export default function  Register() {
 const submitForm = () => {
   setLoading(true);
   console.log("This auth State is", authState);
-  api.post("https://authnextjss.vercel.app/api/auth/register", authState)
+  api.post("https://authnextjss.vercel.app/register", authState)
     .then((res) => {
       setLoading(false);
       const response = res.data;
