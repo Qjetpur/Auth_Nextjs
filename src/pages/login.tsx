@@ -21,7 +21,7 @@ export default function Login() {
 
     try {
       const res = await api.post(
-        "https://authnextjss.vercel.app/api/auth/login",
+        "/api/auth/login",
         authState
       );
       setLoading(false);
