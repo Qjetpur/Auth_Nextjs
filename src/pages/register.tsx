@@ -1,7 +1,6 @@
 "use client";
 import React,{useState} from "react";
 import Link from 'next/link';
-import axios from 'axios';
 import api from '../api';
 import {useRouter} from "next/navigation"
 
@@ -30,7 +29,7 @@ const submitForm = () => {
       console.log("Response:", response);
       if (response.status === 200) {
         console.log("user signed up");
-        alert(`${authState.name}User Sign UP Successfully`)
+        alert(`${authState.name} Sign UP Successfully`)
         console.log("Router:", router);
         router.push(`/login`);
         // alert(`message=${response.message}`)

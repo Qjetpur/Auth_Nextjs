@@ -1,13 +1,11 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import axios from "axios";
-import Email from "next-auth/providers/email";
 import api from '../api';
 
 export default function Login() {
-  const params = useSearchParams();
+
   const [authState, setAuthState] = useState({
     email: "",
     password: "",
@@ -61,11 +59,7 @@ export default function Login() {
                 Sign Up
               </Link>
             </p>
-            {params.get("message") && (
-              <p className="bg-green-400 font-bold rounded-4 p-4">
-                {params.get("message")}
-              </p>
-            )}
+         
             <form className="mt-8">
               <div className="space-y-5">
                 <div>
