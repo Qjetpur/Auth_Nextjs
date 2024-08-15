@@ -44,9 +44,9 @@ export default function Login() {
   return (
     <section className="bg-[#ffe9ff]">
       <div className="h-screen">
-        <div className="flex items-center justify-center px-4 py-50 sm:px-6 sm:py-40 lg:px-8 lg:py-24 h-full">
-          <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md bg-white p-8 rounded-lg">
-            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl text-center">
+        <div className="flex items-center justify-center px-4 py-50 sm:px-6 sm:py-40 lg:px-8 lg:py-24">
+          <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
+            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">
               Sign in
             </h2>
             <p className="text-sm text-gray-600 text-center mt-5">
@@ -63,6 +63,12 @@ export default function Login() {
             <form className="mt-8">
               <div className="space-y-5">
                 <div>
+                  <label
+                    htmlFor="email"
+                    className="text-base font-medium text-gray-900"
+                  >
+                    Email address
+                  </label>
                   <div className="mt-2">
                     <input
                       className="flex h-10 w-full rounded-md border border-gray-300 bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
@@ -80,6 +86,12 @@ export default function Login() {
                 </div>
                 <div>
                   <div className="flex items-center justify-between">
+                    <label
+                      htmlFor="password"
+                      className="text-base font-medium text-gray-900"
+                    >
+                      Password
+                    </label>
                   </div>
                   <div className="mt-2">
                     <input
@@ -103,7 +115,14 @@ export default function Login() {
                     onClick={submitForm}
                     disabled={loading}
                   >
-                    {loading ? "Processing" : "Login"}
+                    {loading ? "Processing" : "Sign in"}
+                  </button>
+                  <button
+                    type="button"
+                    className="inline-flex w-full items-center justify-center rounded-md px-3.5 py-2.5 font-semibold leading-7  border-2 text-[#E6466E] border-[#E6466E]"
+                 
+                  >
+                   Cancel
                   </button>
                   <button
                     type="button"
